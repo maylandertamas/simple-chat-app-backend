@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "sn_backend_app": {
+    "SnBackendApp": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

@@ -1,18 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using SnBackendApp.Data;
+using SnBackendApp.Hubs;
 
-namespace sn_backend_app
+namespace SnBackendApp
 {
     public class Startup
     {
@@ -27,11 +23,32 @@ namespace sn_backend_app
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddDbContext<DataContext>(options =>
+                    options.UseNpgsql(
+                        Configuration.GetConnectionString("SnAppDatabase"),
+                        // Use default postgres database for easier app setup
+                        // Shouldn't be used in normal cases
+                        options => options.UseAdminDatabase("postgres"))
+                    // Use snake case naming convention in database
+                    .UseSnakeCaseNamingConvention());
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "sn_backend_app", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SnBackendApp", Version = "v1" });
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder => builder
+                .WithOrigins("http://localhost:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+            });
+
+
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,18 +58,22 @@ namespace sn_backend_app
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "sn_backend_app v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SnBackendApp v1"));
             }
+
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ChatHub>("/chat");
             });
         }
     }

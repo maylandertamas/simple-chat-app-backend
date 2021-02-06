@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace sn_backend_app
+namespace SnBackendApp
 {
     public class Program
     {
@@ -15,6 +15,8 @@ namespace sn_backend_app
         {
             CreateHostBuilder(args).Build().Run();
         }
+
+        // TODO: ADD LOGGING
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
