@@ -12,7 +12,8 @@ namespace SnBackendApp.Data.Configurations
             builder
                 .HasKey(m => m.Id);
 
-            // Setup manually id start value to prevent id collision with seed data
+            // Adds starts value for auto incrementing id property
+            // Prevent conflicts with seeded data on table inserts
             builder
                 .Property(m => m.Id)
                 .UseIdentityColumn()
@@ -24,7 +25,7 @@ namespace SnBackendApp.Data.Configurations
                 .IsRequired();
 
             // Use postgresql now() function to set default createion date on inserts
-            // Preventing DateTime add tick tracking bug with seeded data on creating new migration
+            // Preventing DateTime add tick tracking bug with seeded data on creating new migration files
             builder
                 .Property(m => m.CreatedAt)
                 .HasDefaultValueSql("now()");

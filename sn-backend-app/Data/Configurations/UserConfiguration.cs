@@ -14,7 +14,8 @@ namespace SnBackendApp.Data.Configurations
             builder
                 .Property(u => u.Id)
                 .UseIdentityColumn()
-                // Setup manually id start value to prevent id collision with seed data
+                // Adds starts value for auto incrementing id property
+                // Prevent conflicts with seeded data on table inserts
                 .HasIdentityOptions(startValue: 4);
 
             builder

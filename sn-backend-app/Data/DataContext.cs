@@ -12,6 +12,7 @@ namespace SnBackendApp.Data
         {
         }
 
+        // DB Sets
         public DbSet<User> Users { get; set; }
         public DbSet<Message> Messages { get; set; }
 

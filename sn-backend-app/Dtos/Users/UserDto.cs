@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using SnBackendApp.Entities;
+using System.Collections.Generic;
 
-namespace SnBackendApp.Entities
+namespace SnBackendApp.Dtos.Users
 {
-    public class User
+    public class UserDto
     {
         public int Id { get; set; }
         public string Username { get; set; }
