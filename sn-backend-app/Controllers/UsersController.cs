@@ -19,6 +19,12 @@ namespace SnBackendApp.Controllers
             this.context = context;
         }
 
+        /// <summary>
+        /// ROUTE: api/users
+        /// Create user
+        /// </summary>
+        /// <param name="createUser"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Login([FromBody] CreateUserDto createUser)
         {
@@ -39,7 +45,14 @@ namespace SnBackendApp.Controllers
                     await context.Users.AddAsync(user);
                     await context.SaveChangesAsync();
                 }
-                return Ok(user);
+                // Map to DTO
+                var map = new UserDto()
+                {
+                    Id = user.Id,
+                    Username = user.Username
+                };
+
+                return Ok(map);
 
             } 
             catch(Exception e)
@@ -47,8 +60,6 @@ namespace SnBackendApp.Controllers
                 Log.Logger.Information($"An error occured on login in {this.GetType()?.Name}: {e}", e);
                 return BadRequest("An error occured");
             }
-
-            
         }
     }
 }

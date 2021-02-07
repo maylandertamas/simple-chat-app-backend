@@ -1,5 +1,4 @@
 ﻿
-
 namespace SnBackendApp.Dtos.Users
 {
     public class CreateUserDto
