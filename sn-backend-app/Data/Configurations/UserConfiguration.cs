@@ -12,6 +12,10 @@ namespace SnBackendApp.Data.Configurations
                 .HasKey(u => u.Id);
 
             builder
+                .HasIndex(u => u.Username)
+                .IsUnique();
+
+            builder
                 .Property(u => u.Id)
                 .UseIdentityColumn()
                 // Adds starts value for auto incrementing id property

@@ -25,10 +25,7 @@ namespace SnBackendApp
 
             services.AddDbContext<DataContext>(options =>
                     options.UseNpgsql(
-                        Configuration.GetConnectionString("SnAppDatabase"),
-                        // Use default postgres database for easier app setup
-                        // Shouldn't be used in normal cases
-                        options => options.UseAdminDatabase("postgres"))
+                        Configuration.GetConnectionString("SnAppDatabase"))
                     // Use snake case naming convention in database
                     .UseSnakeCaseNamingConvention());
 
