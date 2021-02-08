@@ -31,12 +31,12 @@ namespace SnBackendApp.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> GetAllMessagesAsync()
+        public async Task<IActionResult> GetAllMessagesAsync([FromQuery] int? limit = null, [FromQuery] int? offset = null)
         {
             try
             {
                 // Get all messages with related users order by creation date
-                var messages = await context.Messages
+                var query = context.Messages
                 .Include(m => m.User)
                 .OrderBy(m => m.CreatedAt)
                 // Map to DTO
@@ -46,9 +46,15 @@ namespace SnBackendApp.Controllers
                     Text = m.Text,
                     User = m.User,
                     CreatedAt = m.CreatedAt
-                })
-                .ToListAsync();
-                
+                });
+
+                // If limit input available limit query
+                query = limit.HasValue ? query.Take(limit.Value) : query;
+                // If offset input available add offset to query
+                query = offset.HasValue ? query.Skip(offset.Value) : query;
+
+                var messages = await query.ToListAsync();
+
                 return Ok(messages);
             }
             catch (Exception e)
