@@ -24,7 +24,7 @@ namespace SnBackendApp.Data.Configurations
 
             builder
                 .Property(u => u.Username)
-                .HasMaxLength(127)
+                .HasMaxLength(32)
                 .IsRequired();
 
             builder.ToTable("users", "public");

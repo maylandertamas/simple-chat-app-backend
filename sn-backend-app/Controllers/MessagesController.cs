@@ -31,14 +31,15 @@ namespace SnBackendApp.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> GetAllMessagesAsync([FromQuery] int? limit = null, [FromQuery] int? offset = null)
+        public async Task<IActionResult> GetAllMessagesAsync([FromQuery] int? limit = null)
         {
             try
             {
+                var numOfMessages = await context.Messages.CountAsync();
                 // Get all messages with related users order by creation date
                 var query = context.Messages
                 .Include(m => m.User)
-                .OrderBy(m => m.CreatedAt)
+                .OrderBy(m => m.Id)
                 // Map to DTO
                 .Select(m => new MessageDto()
                 {
@@ -48,10 +49,8 @@ namespace SnBackendApp.Controllers
                     CreatedAt = m.CreatedAt
                 });
 
-                // If limit input available limit query
-                query = limit.HasValue ? query.Take(limit.Value) : query;
-                // If offset input available add offset to query
-                query = offset.HasValue ? query.Skip(offset.Value) : query;
+                // Return last x number of elements
+                query = limit.HasValue ? query.Skip(Math.Max(0, numOfMessages - limit.Value)) : query.Skip(Math.Max(0, numOfMessages - 100));
 
                 var messages = await query.ToListAsync();
 
@@ -98,18 +97,25 @@ namespace SnBackendApp.Controllers
                 await context.Messages.AddAsync(newMessage);
                 await context.SaveChangesAsync();
 
-                // Map message to DTO
-                var mapToDto = new MessageDto()
-                {
-                    Id = newMessage.Id,
-                    Text = newMessage.Text,
-                    UserId = newMessage.UserId,
-                };
+                // Query out new message as no tracking to prevent reference looping
+                var result = await context.Messages
+                    .Where(m => m.Id == newMessage.Id)
+                    // Map to DTO
+                    .Select(m => new MessageDto()
+                    {
+                        Id = m.Id,
+                        Text = m.Text,
+                        User = m.User,
+                        UserId = m.UserId,
+                        CreatedAt = m.CreatedAt
+                    })
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync();
 
                 // Send message through hub
-                await hub.Clients.All.SendAsync("NewMessageAdded", mapToDto);
+                await hub.Clients.All.SendAsync("NewMessageAdded", result);
 
-                return Ok(mapToDto);
+                return Ok(result);
 
             }
             catch (Exception e)
