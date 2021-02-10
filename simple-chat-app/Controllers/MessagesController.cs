@@ -35,11 +35,13 @@ namespace SnBackendApp.Controllers
         {
             try
             {
+                // NUmber of all messages in DB
                 var numOfMessages = await context.Messages.CountAsync();
                 // Get all messages with related users order by creation date
                 var query = context.Messages
                 .Include(m => m.User)
                 .OrderBy(m => m.Id)
+                .AsNoTracking()
                 // Map to DTO
                 .Select(m => new MessageDto()
                 {
@@ -49,7 +51,7 @@ namespace SnBackendApp.Controllers
                     CreatedAt = m.CreatedAt
                 });
 
-                // Return last x number of elements
+                // Return last x number of elements, default: return last 100 items
                 query = limit.HasValue ? query.Skip(Math.Max(0, numOfMessages - limit.Value)) : query.Skip(Math.Max(0, numOfMessages - 100));
 
                 var messages = await query.ToListAsync();
@@ -97,7 +99,7 @@ namespace SnBackendApp.Controllers
                 await context.Messages.AddAsync(newMessage);
                 await context.SaveChangesAsync();
 
-                // Query out new message as no tracking to prevent reference looping
+                // Query out new message to prevent reference looping
                 var result = await context.Messages
                     .Where(m => m.Id == newMessage.Id)
                     // Map to DTO
