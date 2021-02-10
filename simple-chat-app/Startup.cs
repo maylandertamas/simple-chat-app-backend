@@ -5,10 +5,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using SnBackendApp.Data;
-using SnBackendApp.Hubs;
+using SimpleChatApp.Data;
+using SimpleChatApp.Hubs;
 
-namespace SnBackendApp
+namespace SimpleChatApp
 {
     public class Startup
     {
@@ -25,14 +25,14 @@ namespace SnBackendApp
 
             services.AddDbContext<DataContext>(options =>
                     options.UseNpgsql(
-                        Configuration.GetConnectionString("SnAppDatabase"))
+                        Configuration.GetConnectionString("SimpleChatAppDatabase"))
                     // Use snake case naming convention in database
                     .UseSnakeCaseNamingConvention());
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SnBackendApp", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SimpleChatApp", Version = "v1" });
             });
 
             services.AddCors(options =>
@@ -55,7 +55,7 @@ namespace SnBackendApp
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SnBackendApp v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SimpleChatApp v1"));
             }
 
 

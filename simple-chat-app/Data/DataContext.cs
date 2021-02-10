@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SnBackendApp.Data.Configurations;
-using SnBackendApp.Entities;
+using SimpleChatApp.Data.Configurations;
+using SimpleChatApp.Entities;
 using System.Collections.Generic;
 
-namespace SnBackendApp.Data
+namespace SimpleChatApp.Data
 {
     public class DataContext : DbContext
     {

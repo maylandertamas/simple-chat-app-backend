@@ -4,7 +4,7 @@ using Serilog;
 using Serilog.Events;
 using System;
 
-namespace SnBackendApp
+namespace SimpleChatApp
 {
     public class Program
     {

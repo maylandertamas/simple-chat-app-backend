@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "SnBackendApp": {
+    "SimpleChatApp": {
       "commandName": "Project",
       "launchUrl": "swagger",
       "environmentVariables": {

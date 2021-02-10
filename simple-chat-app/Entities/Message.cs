@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SnBackendApp.Entities
+namespace SimpleChatApp.Entities
 {
     public class Message
     {

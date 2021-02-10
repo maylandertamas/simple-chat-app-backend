@@ -1,7 +1,7 @@
-﻿using SnBackendApp.Entities;
+﻿using SimpleChatApp.Entities;
 using System;
 
-namespace SnBackendApp.Dtos.Messages
+namespace SimpleChatApp.Dtos.Messages
 {
     public class MessageDto
     {

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace SnBackendApp.Migrations
+namespace SimpleChatApp.Migrations
 {
     public partial class Initial : Migration
     {

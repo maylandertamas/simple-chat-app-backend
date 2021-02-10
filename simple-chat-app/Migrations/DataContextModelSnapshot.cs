@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using SnBackendApp.Data;
+using SimpleChatApp.Data;
 
-namespace SnBackendApp.Migrations
+namespace SimpleChatApp.Migrations
 {
     [DbContext(typeof(DataContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace SnBackendApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
-            modelBuilder.Entity("SnBackendApp.Entities.Message", b =>
+            modelBuilder.Entity("SimpleChatApp.Entities.Message", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -265,7 +265,7 @@ namespace SnBackendApp.Migrations
                         });
                 });
 
-            modelBuilder.Entity("SnBackendApp.Entities.User", b =>
+            modelBuilder.Entity("SimpleChatApp.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -307,9 +307,9 @@ namespace SnBackendApp.Migrations
                         });
                 });
 
-            modelBuilder.Entity("SnBackendApp.Entities.Message", b =>
+            modelBuilder.Entity("SimpleChatApp.Entities.Message", b =>
                 {
-                    b.HasOne("SnBackendApp.Entities.User", "User")
+                    b.HasOne("SimpleChatApp.Entities.User", "User")
                         .WithMany("Messages")
                         .HasForeignKey("UserId")
                         .HasConstraintName("fk_messages_users_user_id")
@@ -319,7 +319,7 @@ namespace SnBackendApp.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("SnBackendApp.Entities.User", b =>
+            modelBuilder.Entity("SimpleChatApp.Entities.User", b =>
                 {
                     b.Navigation("Messages");
                 });

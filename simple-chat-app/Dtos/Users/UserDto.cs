@@ -1,7 +1,7 @@
-﻿using SnBackendApp.Entities;
+﻿using SimpleChatApp.Entities;
 using System.Collections.Generic;
 
-namespace SnBackendApp.Dtos.Users
+namespace SimpleChatApp.Dtos.Users
 {
     public class UserDto
     {

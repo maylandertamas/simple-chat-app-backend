@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SnBackendApp.Data;
-using SnBackendApp.Entities;
+using SimpleChatApp.Data;
+using SimpleChatApp.Entities;
 using System;
 using System.Threading.Tasks;
 using Serilog;
-using SnBackendApp.Dtos.Users;
+using SimpleChatApp.Dtos.Users;
 
-namespace SnBackendApp.Controllers
+namespace SimpleChatApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

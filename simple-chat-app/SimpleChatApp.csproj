@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>SnBackendApp</RootNamespace>
+    <RootNamespace>SimpleChatApp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

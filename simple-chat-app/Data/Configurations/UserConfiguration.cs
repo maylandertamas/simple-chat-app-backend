@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SnBackendApp.Entities;
+using SimpleChatApp.Entities;
 
-namespace SnBackendApp.Data.Configurations
+namespace SimpleChatApp.Data.Configurations
 {
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {

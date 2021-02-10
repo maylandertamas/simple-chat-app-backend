@@ -1,5 +1,5 @@
 ﻿
-namespace SnBackendApp.Dtos.Users
+namespace SimpleChatApp.Dtos.Users
 {
     public class CreateUserDto
     {

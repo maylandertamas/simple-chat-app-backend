@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SnBackendApp.Entities
+namespace SimpleChatApp.Entities
 {
     public class User
     {

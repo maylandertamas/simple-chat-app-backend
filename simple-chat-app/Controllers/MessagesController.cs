@@ -2,15 +2,15 @@
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-using SnBackendApp.Data;
-using SnBackendApp.Dtos.Messages;
-using SnBackendApp.Entities;
-using SnBackendApp.Hubs;
+using SimpleChatApp.Data;
+using SimpleChatApp.Dtos.Messages;
+using SimpleChatApp.Entities;
+using SimpleChatApp.Hubs;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SnBackendApp.Controllers
+namespace SimpleChatApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
