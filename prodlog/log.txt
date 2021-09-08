@@ -1,0 +1,263 @@
+2021-09-08 16:02:32.604 +02:00 [INF] Starting application...
+2021-09-08 16:02:33.067 +02:00 [INF] Now listening on: http://0.0.0.0:4000
+2021-09-08 16:02:33.074 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-08 16:02:33.074 +02:00 [INF] Hosting environment: Production
+2021-09-08 16:02:33.074 +02:00 [INF] Content root path: /app
+2021-09-08 16:03:16.190 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/users - -
+2021-09-08 16:03:16.202 +02:00 [WRN] Failed to determine the https port for redirect.
+2021-09-08 16:03:16.278 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:16.278 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:16.285 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/api/users - - - 405 0 - 97.8260ms
+2021-09-08 16:03:16.881 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/users - -
+2021-09-08 16:03:16.887 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:16.890 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:16.891 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/api/users - - - 405 0 - 10.0305ms
+2021-09-08 16:03:17.117 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/users - -
+2021-09-08 16:03:17.117 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:17.117 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:17.118 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/api/users - - - 405 0 - 1.0715ms
+2021-09-08 16:03:17.654 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/users - -
+2021-09-08 16:03:17.655 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:17.655 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:17.655 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/api/users - - - 405 0 - 0.7236ms
+2021-09-08 16:03:17.877 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/users - -
+2021-09-08 16:03:17.877 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:17.877 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:17.877 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/api/users - - - 405 0 - 0.4119ms
+2021-09-08 16:03:18.045 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/users - -
+2021-09-08 16:03:18.045 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:18.045 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:18.046 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/api/users - - - 405 0 - 0.4371ms
+2021-09-08 16:03:18.658 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/users - -
+2021-09-08 16:03:18.658 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:18.658 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:18.658 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/api/users - - - 405 0 - 0.3993ms
+2021-09-08 16:03:20.077 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/users - -
+2021-09-08 16:03:20.078 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:20.078 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2021-09-08 16:03:20.078 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/api/users - - - 405 0 - 0.8664ms
+2021-09-08 16:03:23.566 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/messages - -
+2021-09-08 16:03:23.567 +02:00 [INF] Executing endpoint 'SimpleChatApp.Controllers.MessagesController.GetAllMessagesAsync (SimpleChatApp)'
+2021-09-08 16:03:23.633 +02:00 [INF] Route matched with {action = "GetAllMessages", controller = "Messages"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllMessagesAsync(System.Nullable`1[System.Int32]) on controller SimpleChatApp.Controllers.MessagesController (SimpleChatApp).
+2021-09-08 16:03:24.764 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DataContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: using snake-case naming  (culture=)
+2021-09-08 16:03:26.104 +02:00 [ERR] Failed executing DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM public.messages AS m
+2021-09-08 16:03:26.158 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'SimpleChatApp.Data.DataContext'.
+Npgsql.PostgresException (0x80004005): 42P01: relation "public.messages" does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "public.messages" does not exist
+    Position: 27
+    File: parse_relation.c
+    Line: 1352
+    Routine: parserOpenTable
+Npgsql.PostgresException (0x80004005): 42P01: relation "public.messages" does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "public.messages" does not exist
+    Position: 27
+    File: parse_relation.c
+    Line: 1352
+    Routine: parserOpenTable
+2021-09-08 16:03:26.179 +02:00 [INF] An error occured on get messages in MessagesController: Npgsql.PostgresException (0x80004005): 42P01: relation "public.messages" does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at SimpleChatApp.Controllers.MessagesController.GetAllMessagesAsync(Nullable`1 limit) in /src/simple-chat-app/Controllers/MessagesController.cs:line 39
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "public.messages" does not exist
+    Position: 27
+    File: parse_relation.c
+    Line: 1352
+    Routine: parserOpenTable
+2021-09-08 16:03:26.197 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-09-08 16:03:26.213 +02:00 [INF] Executed action SimpleChatApp.Controllers.MessagesController.GetAllMessagesAsync (SimpleChatApp) in 2571.3882ms
+2021-09-08 16:03:26.217 +02:00 [INF] Executed endpoint 'SimpleChatApp.Controllers.MessagesController.GetAllMessagesAsync (SimpleChatApp)'
+2021-09-08 16:03:26.226 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/api/messages - - - 400 - text/plain;+charset=utf-8 2660.1246ms
+2021-09-08 16:03:51.082 +02:00 [INF] Application is shutting down...
+2021-09-08 16:14:35.635 +02:00 [INF] Starting application...
+2021-09-08 16:14:37.353 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DataContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: using snake-case naming  (culture=)
+2021-09-08 16:14:38.071 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2021-09-08 16:14:38.236 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL,
+    CONSTRAINT pk___ef_migrations_history PRIMARY KEY (migration_id)
+);
+2021-09-08 16:14:38.247 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2021-09-08 16:14:38.254 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT migration_id, product_version
+FROM "__EFMigrationsHistory"
+ORDER BY migration_id;
+2021-09-08 16:14:38.280 +02:00 [INF] Applying migration '20210210082534_Initial'.
+2021-09-08 16:14:38.358 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE public.users (
+    id integer NOT NULL GENERATED BY DEFAULT AS IDENTITY (START WITH 4),
+    username character varying(32) NOT NULL,
+    CONSTRAINT pk_users PRIMARY KEY (id)
+);
+2021-09-08 16:14:38.379 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE public.messages (
+    id integer NOT NULL GENERATED BY DEFAULT AS IDENTITY (START WITH 60),
+    text character varying(1024) NOT NULL,
+    user_id integer NOT NULL,
+    created_at timestamp without time zone NOT NULL DEFAULT (now()),
+    CONSTRAINT pk_messages PRIMARY KEY (id),
+    CONSTRAINT fk_messages_users_user_id FOREIGN KEY (user_id) REFERENCES public.users (id) ON DELETE CASCADE
+);
+2021-09-08 16:14:38.381 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO public.users (id, username)
+VALUES (1, 'Test User');
+INSERT INTO public.users (id, username)
+VALUES (2, 'John Doe');
+INSERT INTO public.users (id, username)
+VALUES (3, 'Jane Doe');
+2021-09-08 16:14:38.389 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO public.messages (id, text, user_id)
+VALUES (1, 'Test message number 0 by Test User', 1);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (28, 'Test message number 7 by Jane Doe', 3);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (27, 'Test message number 6 by Jane Doe', 3);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (26, 'Test message number 5 by Jane Doe', 3);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (25, 'Test message number 4 by Jane Doe', 3);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (24, 'Test message number 3 by Jane Doe', 3);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (23, 'Test message number 2 by Jane Doe', 3);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (22, 'Test message number 1 by Jane Doe', 3);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (21, 'Test message number 0 by Jane Doe', 3);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (20, 'Test message number 9 by John Doe', 2);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (19, 'Test message number 8 by John Doe', 2);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (18, 'Test message number 7 by John Doe', 2);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (17, 'Test message number 6 by John Doe', 2);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (16, 'Test message number 5 by John Doe', 2);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (15, 'Test message number 4 by John Doe', 2);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (14, 'Test message number 3 by John Doe', 2);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (13, 'Test message number 2 by John Doe', 2);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (12, 'Test message number 1 by John Doe', 2);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (11, 'Test message number 0 by John Doe', 2);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (10, 'Test message number 9 by Test User', 1);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (9, 'Test message number 8 by Test User', 1);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (8, 'Test message number 7 by Test User', 1);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (7, 'Test message number 6 by Test User', 1);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (6, 'Test message number 5 by Test User', 1);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (5, 'Test message number 4 by Test User', 1);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (4, 'Test message number 3 by Test User', 1);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (3, 'Test message number 2 by Test User', 1);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (2, 'Test message number 1 by Test User', 1);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (29, 'Test message number 8 by Jane Doe', 3);
+INSERT INTO public.messages (id, text, user_id)
+VALUES (30, 'Test message number 9 by Jane Doe', 3);
+2021-09-08 16:14:38.396 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX ix_messages_user_id ON public.messages (user_id);
+2021-09-08 16:14:38.402 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX ix_users_username ON public.users (username);
+2021-09-08 16:14:38.408 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT setval(
+    pg_get_serial_sequence('public.users', 'id'),
+    GREATEST(
+        (SELECT MAX(id) FROM public.users) + 1,
+        nextval(pg_get_serial_sequence('public.users', 'id'))),
+    false);
+SELECT setval(
+    pg_get_serial_sequence('public.messages', 'id'),
+    GREATEST(
+        (SELECT MAX(id) FROM public.messages) + 1,
+        nextval(pg_get_serial_sequence('public.messages', 'id'))),
+    false);
+2021-09-08 16:14:38.409 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" (migration_id, product_version)
+VALUES ('20210210082534_Initial', '5.0.2');
+2021-09-08 16:14:38.567 +02:00 [INF] Now listening on: http://0.0.0.0:4000
+2021-09-08 16:14:38.572 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-08 16:14:38.572 +02:00 [INF] Hosting environment: Production
+2021-09-08 16:14:38.572 +02:00 [INF] Content root path: /app
+2021-09-08 16:14:44.649 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/api/messages - -
+2021-09-08 16:14:44.660 +02:00 [WRN] Failed to determine the https port for redirect.
+2021-09-08 16:14:44.722 +02:00 [INF] Executing endpoint 'SimpleChatApp.Controllers.MessagesController.GetAllMessagesAsync (SimpleChatApp)'
+2021-09-08 16:14:44.785 +02:00 [INF] Route matched with {action = "GetAllMessages", controller = "Messages"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllMessagesAsync(System.Nullable`1[System.Int32]) on controller SimpleChatApp.Controllers.MessagesController (SimpleChatApp).
+2021-09-08 16:14:44.868 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DataContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: using snake-case naming  (culture=)
+2021-09-08 16:14:45.133 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)::INT
+FROM public.messages AS m
+2021-09-08 16:14:45.326 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t.id AS "Id", t.text AS "Text", u.id, u.username, t.created_at AS "CreatedAt"
+FROM (
+    SELECT m.id, m.created_at, m.text, m.user_id
+    FROM public.messages AS m
+    ORDER BY m.id
+    OFFSET @__p_0
+) AS t
+INNER JOIN public.users AS u ON t.user_id = u.id
+ORDER BY t.id
+2021-09-08 16:14:45.346 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SimpleChatApp.Dtos.Messages.MessageDto, SimpleChatApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-09-08 16:14:45.416 +02:00 [INF] Executed action SimpleChatApp.Controllers.MessagesController.GetAllMessagesAsync (SimpleChatApp) in 622.0517ms
+2021-09-08 16:14:45.418 +02:00 [INF] Executed endpoint 'SimpleChatApp.Controllers.MessagesController.GetAllMessagesAsync (SimpleChatApp)'
+2021-09-08 16:14:45.435 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/api/messages - - - 200 - application/json;+charset=utf-8 789.4112ms
+2021-09-08 16:14:48.722 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/ - -
+2021-09-08 16:14:48.723 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/ - - - 404 0 - 1.7956ms
+2021-09-08 16:14:56.458 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:4000/messages - -
+2021-09-08 16:14:56.460 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:4000/messages - - - 404 0 - 1.7306ms
+2021-09-08 16:15:05.364 +02:00 [INF] Application is shutting down...

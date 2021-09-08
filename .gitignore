@@ -5,6 +5,7 @@ obj
 # IDE generated folders
 .vs
 .idea
+*.user
 
 # Log
 Logs

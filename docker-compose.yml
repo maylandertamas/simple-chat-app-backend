@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app:
+    container_name: simple_chat_backend_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+  db:
+    container_name: simple_chat_backend_db
+    build: ./postgres
+    env_file: ./postgres/.env.db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+volumes:
+  pgdata:

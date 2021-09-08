@@ -1,0 +1,23 @@
+﻿FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+WORKDIR /app
+EXPOSE 4000
+
+ENV ASPNETCORE_URLS http://*:4000
+
+# Fix time zone
+RUN cp /usr/share/zoneinfo/Europe/Budapest /etc/localtime
+RUN echo Europe/Budapest >  /etc/timezone
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
+COPY . .
+RUN dotnet restore
+RUN dotnet build "simple-chat-app/SimpleChatApp.csproj" -c Deploy -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "simple-chat-app/SimpleChatApp.csproj" -c Deploy -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "SimpleChatApp.dll"]
