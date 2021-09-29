@@ -1,11 +1,11 @@
 # .NET compiled files
 bin
 obj
+*.user
 
 # IDE generated folders
 .vs
 .idea
-*.user
 
 # Log
 Logs
